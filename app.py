@@ -88,10 +88,7 @@ def calculateSequence():
         i+=1
     #print(strips)  
     print(resultSequence)
-    return jsonify(
-            message="Okay",
-            sequence=resultSequence
-    )
+    return {"message":"okay","sequence":resultSequence}
 
 if(__name__ == "__main__"):
     app.run()
