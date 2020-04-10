@@ -9,8 +9,8 @@ def convertJSON_keys_to_integer(x):
     return {int(k): v for k, v in x.items()}
 
 @app.route("/")
-def index():
-    return '<h1>Welcome to GenSeq</h1>'
+def main():
+    return "This is GenSeq !"
 
 @app.route("/getSequence",methods=['POST'])
 def calculateSequence():
@@ -92,4 +92,6 @@ def calculateSequence():
             message="Okay",
             sequence=resultSequence
     )
-    
+
+if(__name__ == "__main__"):
+    app.run()
