@@ -1,8 +1,11 @@
 import numpy as np
 from PIL import Image
 from flask import Flask,request,jsonify
+from flask_cors import CORS, cross_origin
 import json
 app=Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 #convert json keys from character to integer
 def convertJSON_keys_to_integer(x):
@@ -88,9 +91,7 @@ def calculateSequence():
         i+=1
     #print(strips)  
     print(resultSequence)
-    responseData={"message":"okay","sequence":resultSequence}
-    response=app.response_class(response=json.dumps(responseData),status=200,mimetype='application/json')
-    return response
+    return resultSequence
 
 if(__name__ == "__main__"):
     app.run()
