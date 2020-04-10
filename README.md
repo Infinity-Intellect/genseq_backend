@@ -14,3 +14,6 @@ Process Flow:
 1. The user selects the order of the bases as per the input image, on our webiste.
 2. The user then uploads the image to our website.
 3. On submitting the image, the user gets a response indicating the gene sequence of the corresponding image given.
+
+
+Please refer to the frontend application here: https://github.com/Infinity-Intellect/genseq_frontend
