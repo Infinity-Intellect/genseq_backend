@@ -88,7 +88,9 @@ def calculateSequence():
         i+=1
     #print(strips)  
     print(resultSequence)
-    return resultSequence
+    responseData={"message":"okay","sequence":resultSequence}
+    response=app.response_class(response=json.dumps(responseData),status=200,mimetype='application/json')
+    return response
 
 if(__name__ == "__main__"):
     app.run()
