@@ -88,7 +88,7 @@ def calculateSequence():
         i+=1
     #print(strips)  
     print(resultSequence)
-    return {"message":"okay","sequence":resultSequence}
+    return resultSequence
 
 if(__name__ == "__main__"):
     app.run()
