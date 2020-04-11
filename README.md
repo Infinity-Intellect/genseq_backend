@@ -17,3 +17,5 @@ Process Flow:
 
 
 Please refer to the frontend application here: https://github.com/Infinity-Intellect/genseq_frontend
+
+The application is currently live at https://infinity-intellect.github.io/genseq_frontend/
