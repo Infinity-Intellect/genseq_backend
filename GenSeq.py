@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 import os
-
+print("HELLO WORLD")
 imgWidth = 1430 #define image width
 imgHeight = 2230 #define image height
 
