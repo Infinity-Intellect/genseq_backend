@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Hello world actions steps
         id: hello
-        uses: infinity-intellect/hello-github-actions@v1.1.0
+        uses: infinity-intellect/hello-github-actions@v1.1.1
         with:
           who-to-greet: 'Infinity Intellect'
       - name: Get the output time
