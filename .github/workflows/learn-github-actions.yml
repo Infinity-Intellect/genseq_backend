@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: greet-action
 on: [push]
 jobs:
   check-bats-version:
@@ -10,3 +10,14 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+  greet-job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world actions steps
+        id: hello
+        uses: infinity-intellect/hello-github-actions@v1.1.0
+        with:
+          who-to-greet: 'Infinity Intellect'
+      - name: Get the output time
+        run: echo "The time was ${{steps.hello.outputs.time}}"
