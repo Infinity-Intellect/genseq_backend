@@ -6,7 +6,7 @@ jobs:
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - uses: infinity-intellect/hello-github-actions@v2.0.0
+      - uses: infinity-intellect/hello-github-actions@v2.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           comment_starter: 'Thanks for commenting on this PR.'
@@ -15,7 +15,7 @@ jobs:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - uses: infinity-intellect/hello-github-actions@v2.0.0
+      - uses: infinity-intellect/hello-github-actions@v2.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           comment_starter: 'We appreciate you taking your time to comment on this issue.'
