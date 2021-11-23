@@ -1,23 +1,23 @@
 name: greet-action
-on: [push]
+on: issue_comment
 jobs:
-  check-bats-version:
+  pr_commented:
+    name: PR Comment
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: infinity-intellect/hello-github-actions@v1.1.1
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
-  greet-job:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          comment_starter: 'Thanks for commenting on this PR.'
+  issue_commented:
+    name: Issue Comment
+    if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - name: Hello world actions steps
-        id: hello
-        uses: infinity-intellect/hello-github-actions@v1.1.1
+      - uses: infinity-intellect/hello-github-actions@v1.1.1
         with:
-          who-to-greet: 'Infinity Intellect'
-      - name: Get the output time
-        run: echo "The time was ${{steps.hello.outputs.time}}"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          comment_starter: 'We appreciate you taking your time to comment on this issue.'
+
+
